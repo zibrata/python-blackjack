@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 
-# Auteur : Alexandre LEVRET
-# Parcours : ESILV 5A IBO spé FinTech
-# Module : Python pour la finance
+#######################################
+# Auteur   : Alexandre LEVRET         #
+# Parcours : ESILV 5A IBO spé FinTech #
+# Module   : Python pour la finance   #
+#######################################
 
 from random import randint
 
 Cartes = { # dictionnaire afin de ranger les cartes avec en key les cartes, et en value leurs valeurs numériques
-		# cas spécial pour l'As de base il est set à 1 mais l'utilisateur pourra choisir entre 1 et 11
+		   # cas spécial pour l'As de base il est set à 1 mais l'utilisateur pourra choisir entre 1 et 11
 	"As" : 1,
 	"2" : 2,
 	"3" : 3,
@@ -125,7 +127,7 @@ class Client(Joueur):
 class IA(Joueur):
 	def __init__(self):
 		super(IA, self).__init__()
-		self.__solde = randint(1, 1000) # set un solde random
+		self.__solde = randint(1, 1000) # attribue dès l'entrée au casino un solde random 
 		self.__mise = 0
 		self.__libelle = "IA"
 
@@ -162,7 +164,7 @@ class IA(Joueur):
 			self.__mise = valeur
 
 	def Bet(self):
-		self.__mise = randint(1, self.__solde) #peut miser entre 1 et le solde max
+		self.__mise = randint(1, self.__solde) #peut miser entre 1 et son solde max
 		self.__solde -= self.__mise
 		print("\nLa partie est lancée !")
 		print("Solde disponible : {}".format(self.__solde))
